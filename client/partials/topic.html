@@ -1,0 +1,11 @@
+
+<a href = "#/dashboard">Dashboard</a> || <a href = "#/"> Logout </a>
+	<h2><a href = "#/user/{{topicdata.user}}">{{topicdata.user}}</a> posted a topic:</h2>
+		<h3>Question: {{topicdata.title}}</h3>
+		<h3>Description: {{topicdata.description}}</h3>
+		<h4>Post your answer here: <textarea ng-model = "newPost.post"></textarea></h4>
+		<input type = "submit" ng-click = "addPost()">	
+		<div ng-repeat = "post in topicdata.posts">
+				<h4><a href= "#/user/{{post._user}}">{{post.user}}</a>:  {{ post.post }}</h4><button ng-click = 'addlike({{topicdata._id}})'>like</button><button ng-click = "add_dislike({{topicdata._id}})">dislike</button>
+				<textarea></textarea>
+		</div>
